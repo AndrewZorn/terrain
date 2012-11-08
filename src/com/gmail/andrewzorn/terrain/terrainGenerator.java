@@ -47,11 +47,28 @@ public class terrainGenerator extends ChunkGenerator {
 					blocks[this.coordsToInt(x,y,z)] = (byte) Material.DIRT.getId();
 				}
 				
+				// this will make a checkerboard
 				if((x+z)%2 == 1)
 					blocks[this.coordsToInt(x,20,z)] = (byte) Material.OBSIDIAN.getId();
 				else
 					blocks[this.coordsToInt(x,20,z)] = (byte) Material.WOOL.getId();
 				
+				// chess pieces, randomly per side
+				if(rand.nextInt(20)<2) {
+					if(rand.nextInt(20)<10)
+					{
+						blocks[this.coordsToInt(x,21,z)] = (byte) Material.STONE.getId();
+						blocks[this.coordsToInt(x,22,z)] = (byte) Material.STONE.getId();
+						blocks[this.coordsToInt(x,23,z)] = (byte) Material.STONE.getId();
+					}
+					else {
+						blocks[this.coordsToInt(x,21,z)] = (byte) Material.SAND.getId();
+						blocks[this.coordsToInt(x,22,z)] = (byte) Material.SAND.getId();
+						blocks[this.coordsToInt(x,23,z)] = (byte) Material.SAND.getId();
+					}
+				}
+				
+				// lava/glass ceiling
 				blocks[this.coordsToInt(x,40,z)] = (byte) Material.GLASS.getId();
 				blocks[this.coordsToInt(x,41,z)] = (byte) Material.LAVA.getId();
 			}
