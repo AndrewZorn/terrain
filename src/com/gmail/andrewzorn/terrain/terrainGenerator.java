@@ -19,11 +19,12 @@ public class terrainGenerator extends ChunkGenerator {
 	}
 	
 	public List<BlockPopulator> getDefaultPopulators(World world) {
-		ArrayList<BlockPopulator> populators = new ArrayList<BlockPopulator>();
+		return new ArrayList<BlockPopulator>();
+		/* ArrayList<BlockPopulator> populators = new ArrayList<BlockPopulator>();
 		
 		populators.add(new terrainTreePopulator());
 		
-		return populators;
+		return populators; */
 	}
 	
 	public Location getFixedSpawnLocation(World world, Random random) {
