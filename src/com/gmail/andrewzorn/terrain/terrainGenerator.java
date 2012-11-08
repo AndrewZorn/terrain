@@ -46,7 +46,13 @@ public class terrainGenerator extends ChunkGenerator {
 					blocks[this.coordsToInt(x,y,z)] = (byte) Material.DIRT.getId();
 				}
 				
-				blocks[this.coordsToInt(x,20,z)] = (byte) Material.GRASS.getId();
+				if((x+z)%2 == 1)
+					blocks[this.coordsToInt(x,20,z)] = (byte) Material.OBSIDIAN.getId();
+				else
+					blocks[this.coordsToInt(x,20,z)] = (byte) Material.WOOL.getId();
+				
+				blocks[this.coordsToInt(x,40,z)] = (byte) Material.GLASS.getId();
+				blocks[this.coordsToInt(x,41,z)] = (byte) Material.LAVA.getId();
 			}
 		}
 		
